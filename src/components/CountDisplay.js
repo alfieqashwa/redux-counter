@@ -5,7 +5,7 @@ function CountDisplay() {
   const { count } = useCountState();
   return (
     <div>
-      <h1>Counter Redux</h1>
+      <h1>Counter Hooks</h1>
       <h2>Count: {count}</h2>
     </div>
   );
