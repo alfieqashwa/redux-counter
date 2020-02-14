@@ -1,5 +1,5 @@
 import React from "react";
-import { useCountState } from "../hooks/count-context";
+import { useCountState } from "../../hooks/count-context";
 
 function CountDisplay() {
   const { count } = useCountState();
@@ -11,4 +11,4 @@ function CountDisplay() {
   );
 }
 
-export default CountDisplay;
+export { CountDisplay };

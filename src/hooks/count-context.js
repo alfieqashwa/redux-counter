@@ -1,5 +1,5 @@
 import React, { createContext, useContext } from "react";
-import rootReducer from "../reducer";
+import rootReducer from "../reducers";
 
 export const CountStateContext = createContext();
 export const CountDispatchContext = createContext();
