@@ -2,15 +2,15 @@ import React from "react";
 import { connect } from "react-redux";
 import { decrement, increment, reset } from "../../actions";
 
-function CounterRedux({ count, dispatch }) {
+function CounterRedux({ count, decrement, increment, reset }) {
   const handleIncrement = () => {
-    dispatch(increment());
+    increment();
   };
   const handleDecrement = () => {
-    dispatch(decrement());
+    decrement();
   };
   const handleReset = () => {
-    dispatch(reset());
+    reset();
   };
 
   return (
@@ -34,4 +34,6 @@ const mapStateToProps = state => ({
   count: state.count
 });
 
-export default connect(mapStateToProps)(CounterRedux);
+const mapDispatchToProps = { increment, decrement, reset };
+
+export default connect(mapStateToProps, mapDispatchToProps)(CounterRedux);
