@@ -3,6 +3,8 @@ import { DECREMENTHOOKS, INCREMENTHOOKS, RESETHOOKS } from "../../reducers";
 import { useSelector, useDispatch } from "react-redux";
 // import { decrement, increment, reset } from "../../actions";
 
+import Button from "../Button";
+
 function CounterReduxHooks() {
   const count = useSelector(state => state.hooksReducer.count);
   const dispatch = useDispatch();
@@ -11,15 +13,18 @@ function CounterReduxHooks() {
     <div>
       <h1>Counter Redux Hooks</h1>
       <h2>Counter: {count}</h2>
-      <button type="button" onClick={() => dispatch({ type: DECREMENTHOOKS })}>
+      <Button onClick={() => dispatch({ type: DECREMENTHOOKS })}>
         Decrement
-      </button>
-      <button type="button" onClick={() => dispatch({ type: RESETHOOKS })}>
+      </Button>
+      <Button
+        disabled={count === 0}
+        onClick={() => dispatch({ type: RESETHOOKS })}
+      >
         Reset
-      </button>
-      <button type="button" onClick={() => dispatch({ type: INCREMENTHOOKS })}>
+      </Button>
+      <Button onClick={() => dispatch({ type: INCREMENTHOOKS })}>
         Increment
-      </button>
+      </Button>
     </div>
   );
 }

@@ -11,10 +11,12 @@ export default () => (
   <div style={{ textAlign: "center" }}>
     <Provider store={store}>
       <CounterRedux />
+      <br />
       <hr />
       <CounterReduxHooks />
     </Provider>
     <br />
+    <hr />
     <CountProvider>
       <CountDisplay />
       <CountDispatch />

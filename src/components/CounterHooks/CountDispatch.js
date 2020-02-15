@@ -2,6 +2,8 @@ import React from "react";
 import { decrement, increment, reset } from "../../actions";
 import { useCountDispatch } from "../../hooks/count-context";
 
+import Button from "../Button";
+
 function CountDispatch() {
   const dispatch = useCountDispatch();
 
@@ -16,15 +18,9 @@ function CountDispatch() {
   };
   return (
     <div>
-      <button type="button" onClick={handleDecrement}>
-        decrement
-      </button>
-      <button type="button" onClick={handleReset}>
-        reset
-      </button>
-      <button type="button" onClick={handleIncrement}>
-        increment
-      </button>
+      <Button onClick={handleDecrement}>decrement</Button>
+      <Button onClick={handleReset}>reset</Button>
+      <Button onClick={handleIncrement}>increment</Button>
     </div>
   );
 }

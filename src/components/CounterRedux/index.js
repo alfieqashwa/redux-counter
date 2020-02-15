@@ -2,6 +2,8 @@ import React from "react";
 import { connect } from "react-redux";
 import { decrement, increment, reset } from "../../actions";
 
+import Button from "../Button";
+
 function CounterRedux({ count, decrement, increment, reset }) {
   const handleIncrement = () => {
     increment();
@@ -17,15 +19,11 @@ function CounterRedux({ count, decrement, increment, reset }) {
     <div>
       <h1>Counter Redux</h1>
       <h2>Counter: {count}</h2>
-      <button type="button" onClick={handleDecrement}>
-        Decrement
-      </button>
-      <button type="button" onClick={handleReset}>
+      <Button onClick={handleDecrement}>Decrement</Button>
+      <Button disabled={count === 0} onClick={handleReset}>
         Reset
-      </button>
-      <button type="button" onClick={handleIncrement}>
-        Increment
-      </button>
+      </Button>
+      <Button onClick={handleIncrement}>Increment</Button>
     </div>
   );
 }
