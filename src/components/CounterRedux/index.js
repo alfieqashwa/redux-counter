@@ -31,7 +31,7 @@ function CounterRedux({ count, decrement, increment, reset }) {
 }
 
 const mapStateToProps = state => ({
-  count: state.count
+  count: state.reducer.count
 });
 
 const mapDispatchToProps = { increment, decrement, reset };

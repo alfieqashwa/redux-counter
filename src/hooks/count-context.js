@@ -1,11 +1,11 @@
 import React, { createContext, useContext } from "react";
-import rootReducer from "../reducers";
+import { reducer } from "../reducers";
 
 export const CountStateContext = createContext();
 export const CountDispatchContext = createContext();
 
 function CountProvider({ children }) {
-  const [state, dispatch] = React.useReducer(rootReducer, { count: 24 });
+  const [state, dispatch] = React.useReducer(reducer, { count: 24 });
   return (
     <CountStateContext.Provider value={state}>
       <CountDispatchContext.Provider value={dispatch}>
